@@ -8,8 +8,8 @@ class ClubBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String imagePath =
-        bannerImagePath ?? 'assets/images/default/club_defaul_banner_image.png';
+    String imagePath = bannerImagePath ??
+        'assets/images/default/club_banner_image_default.png';
     String topText = bannerText ?? '';
 
     return FlexibleSpaceBar(
@@ -40,9 +40,9 @@ class ClubBanner extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: const [0.3, 0.6],
+                stops: const [0.4, 0.5],
                 colors: [
-                  Colors.black.withOpacity(0.6),
+                  Colors.black.withOpacity(0.7),
                   Colors.transparent,
                 ],
               ),

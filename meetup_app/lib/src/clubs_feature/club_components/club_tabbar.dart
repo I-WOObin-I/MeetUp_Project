@@ -5,7 +5,6 @@ class ClubTabBar extends StatelessWidget implements PreferredSizeWidget {
     const Icon(Icons.home),
     const Icon(Icons.people),
     const Icon(Icons.calendar_month),
-    const Icon(Icons.handshake),
     const Icon(Icons.info),
   ];
 

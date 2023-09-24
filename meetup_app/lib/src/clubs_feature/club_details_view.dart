@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_tabbar.dart';
+import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
 
 class ClubDetailsView extends StatefulWidget {
@@ -24,7 +25,6 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
       'Tab 2',
       'Tab 3',
       'Tab 4',
-      'Tab 5',
     ];
     return DefaultTabController(
       length: tabs.length, // Number of tabs
@@ -37,7 +37,9 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
                 handle:
                     NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 sliver: SliverAppBar(
-                  title: Text('Club Name'),
+                  title: const ClubTitle(
+                      clubName: "Club Name",
+                      clubLogoPath: "assets/images/samples/team_logo.png"),
                   floating: true,
                   pinned: true,
                   snap: true,
