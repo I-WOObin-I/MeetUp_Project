@@ -1,0 +1,3 @@
+class TeamEntity {
+  const TeamEntity();
+}
