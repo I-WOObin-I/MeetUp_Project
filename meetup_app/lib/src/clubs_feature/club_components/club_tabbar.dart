@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ClubTabBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Icon> tabIcons = [
-    const Icon(Icons.home),
+    const Icon(Icons.event_note),
     const Icon(Icons.people),
     const Icon(Icons.calendar_month),
     const Icon(Icons.info),
