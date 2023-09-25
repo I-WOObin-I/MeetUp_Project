@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meetup_app/core/board_post.dart';
 
 class ClubBoardSection extends StatefulWidget {
   const ClubBoardSection({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _ClubBoardSectionState extends State<ClubBoardSection> {
     //await Future.delayed(Duration(seconds: 2));
     setState(() {
       // Update the list with fetched data
-      boardActivity = List.generate(10, (index) => 'Post $index');
+      boardActivity = List.generate(25, (index) => 'Post $index');
     });
   }
 
@@ -33,14 +34,7 @@ class _ClubBoardSectionState extends State<ClubBoardSection> {
     return ListView.builder(
       itemCount: boardActivity.length,
       itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text(boardActivity[index]),
-          leading: const CircleAvatar(
-            backgroundImage: AssetImage('assets/images/samples/team_logo.png'),
-          ),
-          subtitle: Text('Subtitle $index'),
-          trailing: const Icon(Icons.more_vert),
-        );
+        return BoardPost(index: index);
       },
     );
   }
