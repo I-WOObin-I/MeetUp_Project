@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meetup_app/core/board_post.dart';
+import 'package:meetup_app/core/widgets/board_post_widget.dart';
+
+import '../../../core/objects/board_post.dart';
 
 class ClubBoardSection extends StatefulWidget {
   const ClubBoardSection({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class _ClubBoardSectionState extends State<ClubBoardSection> {
     //await Future.delayed(Duration(seconds: 2));
     setState(() {
       // Update the list with fetched data
-      boardActivity = List.generate(25, (index) => 'Post $index');
+      boardActivity = List.generate(25, (index) => 'Post content $index');
     });
   }
 
@@ -34,7 +36,15 @@ class _ClubBoardSectionState extends State<ClubBoardSection> {
     return ListView.builder(
       itemCount: boardActivity.length,
       itemBuilder: (BuildContext context, int index) {
-        return BoardPost(index: index);
+        return BoardPostWidget(
+          boardPost: BoardPost(
+            author: 'Author $index',
+            publishDate: DateTime.now(),
+            content: boardActivity[index],
+            likes: [],
+            comments: [],
+          ),
+        );
       },
     );
   }
