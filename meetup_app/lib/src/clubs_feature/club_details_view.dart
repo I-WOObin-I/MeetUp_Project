@@ -3,6 +3,10 @@ import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_tabbar.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
+import 'package:meetup_app/src/clubs_feature/club_sections/club_info_section.dart';
+import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.dart';
+
+import 'club_sections/club_calendar_section.dart';
 
 class ClubDetailsView extends StatefulWidget {
   final String clubName;
@@ -70,16 +74,14 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
             },
             body: Container(
               margin: const EdgeInsets.only(top: kTextTabBarHeight),
-              child: TabBarView(
-                // These are the contents of the tab views, below the tabs.
-                children: tabs.map((String name) {
-                  return const SafeArea(
-                    top: false,
-                    bottom: false,
-                    child: ClubBoardSection(),
-                  );
-                }).toList(),
-              ),
+              child: const TabBarView(
+                  // These are the contents of the tab views, below the tabs.
+                  children: [
+                    ClubBoardSection(),
+                    ClubMembersSection(),
+                    ClubCalendarSection(),
+                    ClubInfoSection(),
+                  ]),
             )),
       ),
     );
