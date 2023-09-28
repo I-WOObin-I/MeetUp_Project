@@ -3,6 +3,7 @@ import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_tabbar.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
+import 'package:meetup_app/src/clubs_feature/club_sections/club_info_section.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.dart';
 
 import 'club_sections/club_calendar_section.dart';
@@ -79,6 +80,7 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
                     ClubBoardSection(),
                     ClubMembersSection(),
                     ClubCalendarSection(),
+                    ClubInfoSection(),
                   ]),
             )),
       ),
