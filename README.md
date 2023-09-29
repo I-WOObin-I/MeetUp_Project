@@ -6,4 +6,4 @@ Project uses Flutter framework to develop multiplatform front-end application
 Back-end developement hasn't started yet
 
 # Creators
-Michał Łubiński (front-end application)
+Michał Łubiński
