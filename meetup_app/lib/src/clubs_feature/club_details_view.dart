@@ -9,9 +9,7 @@ import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.
 import 'club_sections/club_calendar_section.dart';
 
 class ClubDetailsView extends StatefulWidget {
-  final String clubName;
-
-  ClubDetailsView({required this.clubName});
+  ClubDetailsView({super.key});
 
   static const routeName = '/club_details';
 
