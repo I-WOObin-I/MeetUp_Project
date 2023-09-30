@@ -14,6 +14,10 @@ class ClubTitle extends StatelessWidget {
 
     return Row(
       children: [
+        // ElevatedButton(
+        //   onPressed: () => Navigator.pop(context),
+        //   child: const Icon(Icons.arrow_back),
+        // ),
         // Logo (you can replace 'logo.png' with your image path)
         Padding(
           padding:
@@ -26,14 +30,16 @@ class ClubTitle extends StatelessWidget {
           ),
         ),
         // Club Name (replace 'Club Name' with your actual club name)
-        Container(
-          width: 150, // Adjust width as needed
-          child: FittedBox(
-            fit: BoxFit.fitWidth, // Automatically scales down the text
-            child: Text(
-              titleText, // Replace with your club name
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
+        Center(
+          child: SizedBox(
+            width: 150, // Adjust width as needed
+            child: FittedBox(
+              fit: BoxFit.fitWidth, // Automatically scales down the text
+              child: Text(
+                titleText, // Replace with your club name
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

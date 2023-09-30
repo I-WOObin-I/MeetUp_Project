@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
+import 'package:meetup_app/src/clubs_feature/club_components/club_drawer.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_tabbar.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
@@ -31,6 +32,7 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
     return DefaultTabController(
       length: tabs.length, // Number of tabs
       child: Scaffold(
+        endDrawer: const ClubDrawer(),
         body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
@@ -54,8 +56,7 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
                           // Navigate to the settings page. If the user leaves and returns
                           // to the app after it has been killed while running in the
                           // background, the navigation stack is restored.
-                          Navigator.restorablePushNamed(
-                              context, ClubDetailsView.routeName);
+                          Scaffold.of(context).openEndDrawer();
                           //Navigator.restorablePushNamed(context, SettingsView.routeName);
                         },
                       ),
