@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:meetup_app/src/leagues_feature/league_details_view.dart';
 
 import 'clubs_feature/club_details_view.dart';
 import 'sample_feature/sample_item_details_view.dart';
@@ -26,6 +27,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _widgetOptions = [
       ClubDetailsView(),
+      LeagueDetailsView(),
       const SampleItemListView(),
       SettingsView(controller: widget.settingsController),
     ];
@@ -67,6 +69,10 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.emoji_events),
+              label: 'League',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
