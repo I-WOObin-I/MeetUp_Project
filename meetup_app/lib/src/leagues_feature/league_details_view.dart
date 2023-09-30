@@ -76,11 +76,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
                   // These are the contents of the tab views, below the tabs.
 
                   children: [
-                    Container(
-                      margin:
-                          const EdgeInsets.only(top: kTextTabBarHeight * 1.5),
-                      child: LeagueUpCommingMatchesSection(),
-                    ),
+                    LeagueUpCommingMatchesSection(),
                     Text("data"),
                     Text("data"),
                     Text("data"),

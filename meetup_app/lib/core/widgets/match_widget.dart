@@ -11,41 +11,49 @@ class MatchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Card(
       child: ListTile(
-        leading: Row(
-          children: [
-            CircleAvatar(
-              child: Icon(Icons.person),
-            ),
-            Text(
-              "team 1 name",
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.white,
+        leading: SizedBox(
+          width: 120.0,
+          child: Row(
+          
+            children: [
+              CircleAvatar(
+                child: Icon(Icons.person),
               ),
-            )
-          ],
+              Text(
+                "team 1 name",
+                style: TextStyle(
+                  fontSize: 12.0,
+                ),
+              )
+            ],
         ),
-        trailing: Row(
-          children: [
-            CircleAvatar(
-              child: Icon(Icons.person),
-            ),
-            Text(
-              "team 2 name",
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.white,
+        ),
+        
+        trailing: SizedBox(
+          width: 120.0,
+          child:  Row(
+            children: [
+              Text(
+                "team 2 name",
+                style: TextStyle(
+                  fontSize: 12.0,
+                )),
+              CircleAvatar(
+                child: Icon(Icons.person),
               ),
-            )
-          ],
+            ],
         ),
-        title: Text(
+        ),
+        
+        title: Center(
+          child: Text(
           "VS",
           style: TextStyle(
             fontSize: 20.0,
-            color: Colors.white,
           ),
         ),
+        )
+        
       ),
     );
   }

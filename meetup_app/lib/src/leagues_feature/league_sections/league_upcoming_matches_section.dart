@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:meetup_app/core/widgets/board_post_widget.dart';
 import 'package:meetup_app/core/widgets/match_widget.dart';
 
-import '../../../core/objects/board_post.dart';
 
 class LeagueUpCommingMatchesSection extends StatefulWidget {
   const LeagueUpCommingMatchesSection({Key? key}) : super(key: key);
@@ -36,19 +35,11 @@ class _LeagueUpCommingMatchesSectionState
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text("Upcoming Matches"),
-        MatchWidget(),
-        MatchWidget(),
-        MatchWidget(),
-        ListView.builder(
+    return ListView.builder(
           itemCount: boardActivity.length,
           itemBuilder: (BuildContext context, int index) {
             return MatchWidget();
           },
-        ),
-      ],
-    );
+        );
   }
 }
