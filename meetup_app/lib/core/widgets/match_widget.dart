@@ -11,50 +11,59 @@ class MatchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Card(
       child: ListTile(
-        leading: SizedBox(
-          width: 120.0,
-          child: Row(
-          
-            children: [
-              CircleAvatar(
-                child: Icon(Icons.person),
-              ),
-              Text(
-                "team 1 name",
-                style: TextStyle(
-                  fontSize: 12.0,
+          contentPadding: EdgeInsets.all(0.0),
+          leading: SizedBox(
+            width: 130.0,
+            child: Row(
+              children: [
+                CircleAvatar(
+                  child: Icon(Icons.person),
                 ),
-              )
-            ],
-        ),
-        ),
-        
-        trailing: SizedBox(
-          width: 120.0,
-          child:  Row(
-            children: [
-              Text(
-                "team 2 name",
-                style: TextStyle(
-                  fontSize: 12.0,
-                )),
-              CircleAvatar(
-                child: Icon(Icons.person),
-              ),
-            ],
-        ),
-        ),
-        
-        title: Center(
-          child: Text(
-          "VS",
-          style: TextStyle(
-            fontSize: 20.0,
+                SizedBox(
+                  width: 80, // Adjust width as needed
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth, // Automatically scales down the text
+                    child: Text(
+                      "team 1 name", // Replace with your club name
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        )
-        
-      ),
+          trailing: SizedBox(
+            width: 130.0,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 80, // Adjust width as needed
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth, // Automatically scales down the text
+                    child: Text(
+                      "team 2 name", // Replace with your club name
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                CircleAvatar(
+                  child: Icon(Icons.person),
+                ),
+              ],
+            ),
+          ),
+          title: Center(
+            child: Text(
+              "VS",
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+          )),
     );
   }
 }

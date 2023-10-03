@@ -72,7 +72,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
             },
             body: Container(
               margin: const EdgeInsets.only(top: kTextTabBarHeight),
-              child: TabBarView(
+              child: const TabBarView(
                   // These are the contents of the tab views, below the tabs.
 
                   children: [
