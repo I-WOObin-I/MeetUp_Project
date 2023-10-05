@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meetup_app/core/objects/board_post.dart';
+import 'package:meetup_app/core/widgets/fitted_text.dart';
 
 class MatchWidget extends StatelessWidget {
   //Match match;
@@ -9,50 +10,75 @@ class MatchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      child: ListTile(
+    return Card(
+      child: ExpansionTile(
+        initiallyExpanded: false,
+        tilePadding: EdgeInsets.all(0.0),
         leading: SizedBox(
-          width: 120.0,
+          width: 150.0,
           child: Row(
-          
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 child: Icon(Icons.person),
               ),
-              Text(
-                "team 1 name",
-                style: TextStyle(
-                  fontSize: 12.0,
-                ),
-              )
+              FittedText("team 1 name", 100.0),
             ],
         ),
         ),
-        
         trailing: SizedBox(
-          width: 120.0,
+          width: 150.0,
           child:  Row(
             children: [
-              Text(
-                "team 2 name",
-                style: TextStyle(
-                  fontSize: 12.0,
-                )),
-              CircleAvatar(
+              FittedText("team 2 name", 100.0),
+              const CircleAvatar(
                 child: Icon(Icons.person),
               ),
             ],
         ),
         ),
-        
-        title: Center(
-          child: Text(
-          "VS",
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
-        ),
+        title: const Center(
+          child: Column(
+          children: [
+            Text(
+              "VS",
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+            Text(
+              "15.09.2023",
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.grey,
+              )
+            )
+          ],
         )
+          
+          
+        ),
+        children: const [
+          Center(
+            child: Column(
+              children: [
+                Text(
+                  "Gdansk energetykow 1",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text(
+                  "2:1",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.grey,
+                  )
+                )
+              ],
+            )
+          ),
+        ],
         
       ),
     );
