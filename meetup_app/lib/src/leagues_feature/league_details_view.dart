@@ -42,7 +42,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
                       NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                   sliver: SliverAppBar(
                     title: const ClubTitle(
-                        clubName: "Club Name",
+                        clubName: "League Name",
                         clubLogoPath: "assets/images/samples/team_logo.png"),
                     floating: true,
                     pinned: true,
