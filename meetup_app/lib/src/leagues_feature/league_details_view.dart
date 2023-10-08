@@ -72,6 +72,17 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
               ];
             },
             body: Container(
+              // decoration: const BoxDecoration(
+              //   gradient: LinearGradient(
+              //     begin: Alignment.topLeft,
+              //     end: Alignment.bottomRight,
+              //     colors: [
+              //       Color.fromARGB(255, 15, 192, 24),
+              //       Color.fromARGB(255, 206, 36, 14),
+              //     ],
+              //   ),
+              // ),
+              padding: EdgeInsets.all(5.0),
               margin: const EdgeInsets.only(top: kTextTabBarHeight),
               child: const TabBarView(
                   // These are the contents of the tab views, below the tabs.
