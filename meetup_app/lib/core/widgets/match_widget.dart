@@ -4,10 +4,17 @@ import 'package:intl/intl.dart';
 import 'package:meetup_app/core/objects/board_post.dart';
 import 'package:meetup_app/core/widgets/fitted_text.dart';
 
-class MatchWidget extends StatelessWidget {
+class MatchWidget extends StatefulWidget {
+  MatchWidget({super.key});
+
+  @override
+  State<MatchWidget> createState() => _MatchWidgetState();
+}
+
+class _MatchWidgetState extends State<MatchWidget> {
   //Match match;
   DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm");
-  MatchWidget({super.key});
+  Icon expandIcon = const Icon(Icons.arrow_drop_down, color: Colors.grey);
 
   // HEADER
   Container header = Container(
@@ -45,6 +52,7 @@ class MatchWidget extends StatelessWidget {
           const CircleAvatar(
             child: Icon(Icons.person),
           ),
+          //expandIcon,
         ],
       ));
 

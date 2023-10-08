@@ -53,4 +53,20 @@ class League extends Fixture {
   List<LeaguePtsCategory> getAllPtsCategories() {
     return ptsCategories;
   }
+
+  List<List<String>> getLeagueTable() {
+    List<List<String>> leagueTable = [];
+
+    List<String> namesCollumn = ['Team'];
+    namesCollumn.addAll(teamIds);
+    leagueTable.add(namesCollumn);
+
+    for (var ptsCategory in ptsCategories) {
+      List<String> ptsCollumn = [ptsCategory.name];
+      ptsCollumn.addAll(ptsCategory.points.map((e) => e.toString()));
+      leagueTable.add(ptsCollumn);
+    }
+
+    return leagueTable;
+  }
 }

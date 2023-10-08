@@ -6,6 +6,7 @@ import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_info_section.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.dart';
+import 'package:meetup_app/src/leagues_feature/league_sections/league_table_section.dart';
 import 'package:meetup_app/src/leagues_feature/league_sections/league_upcoming_matches_section.dart';
 
 class LeagueDetailsView extends StatefulWidget {
@@ -77,7 +78,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
 
                   children: [
                     LeagueUpCommingMatchesSection(),
-                    Text("data"),
+                    LeagueTableSection(),
                     Text("data"),
                     Text("data"),
                   ]),
