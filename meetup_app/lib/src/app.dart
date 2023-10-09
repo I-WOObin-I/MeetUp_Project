@@ -56,8 +56,8 @@ class _MyAppState extends State<MyApp> {
       ],
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: widget.settingsController.themeMode,
       home: Scaffold(
         // appBar: AppBar(
@@ -81,12 +81,12 @@ class _MyAppState extends State<MyApp> {
               label: 'List',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.group_add),
               label: 'LFG',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'settings',
             ),
           ],
           currentIndex: _selectedIndex,
