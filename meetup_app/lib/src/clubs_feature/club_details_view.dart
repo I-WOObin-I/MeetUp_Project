@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_drawer.dart';
-import 'package:meetup_app/src/clubs_feature/club_components/club_tabbar.dart';
 import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_info_section.dart';
 import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.dart';
 
+import '../../core/widgets/banner_tabbar.dart';
 import 'club_sections/club_calendar_section.dart';
 
 class ClubDetailsView extends StatefulWidget {
@@ -20,6 +20,13 @@ class ClubDetailsView extends StatefulWidget {
 
 class _ClubDetailsViewState extends State<ClubDetailsView> {
   int _selectedTabIndex = 0;
+
+  List<Icon> tabBarIcons = [
+    const Icon(Icons.event_note),
+    const Icon(Icons.people),
+    const Icon(Icons.calendar_month),
+    const Icon(Icons.info),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +73,9 @@ class _ClubDetailsViewState extends State<ClubDetailsView> {
                             'assets/images/samples/team_photo.png'),
                     expandedHeight: 150.0,
                     //forceElevated: innerBoxIsScrolled,
-                    bottom: ClubTabBar(),
+                    bottom: BannerTabBar(
+                      tabIcons: tabBarIcons,
+                    ),
                   ),
                 ),
               ];

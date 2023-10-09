@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ClubTabBar extends StatelessWidget implements PreferredSizeWidget {
-  final List<Icon> tabIcons = [
-    const Icon(Icons.event_note),
-    const Icon(Icons.people),
-    const Icon(Icons.calendar_month),
-    const Icon(Icons.info),
-  ];
+class BannerTabBar extends StatelessWidget implements PreferredSizeWidget {
+  List<Icon> tabIcons;
 
-  ClubTabBar({Key? key}) : super(key: key);
+  BannerTabBar({Key? key, required List<Icon> this.tabIcons}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

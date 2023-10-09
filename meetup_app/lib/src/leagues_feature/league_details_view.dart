@@ -9,6 +9,8 @@ import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.
 import 'package:meetup_app/src/leagues_feature/league_sections/league_table_section.dart';
 import 'package:meetup_app/src/leagues_feature/league_sections/league_upcoming_matches_section.dart';
 
+import '../../core/widgets/banner_tabbar.dart';
+
 class LeagueDetailsView extends StatefulWidget {
   LeagueDetailsView({super.key});
 
@@ -20,6 +22,13 @@ class LeagueDetailsView extends StatefulWidget {
 
 class _LeagueDetailsViewState extends State<LeagueDetailsView> {
   int _selectedTabIndex = 0;
+
+  List<Icon> tabBarIcons = [
+    const Icon(Icons.sports),
+    const Icon(Icons.leaderboard),
+    const Icon(Icons.calendar_month),
+    const Icon(Icons.info),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +75,9 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
                             'assets/images/samples/league_banner.png'),
                     expandedHeight: 150.0,
                     //forceElevated: innerBoxIsScrolled,
-                    bottom: ClubTabBar(),
+                    bottom: BannerTabBar(
+                      tabIcons: tabBarIcons,
+                    ),
                   ),
                 ),
               ];
