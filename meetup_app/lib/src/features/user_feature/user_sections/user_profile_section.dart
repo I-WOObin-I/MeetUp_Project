@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/core/widgets/board_post_widget.dart';
+import 'package:meetup_app/core/widgets/fitted_text.dart';
 import 'package:meetup_app/core/widgets/fixtures/league_table_widget.dart';
 import 'package:meetup_app/core/widgets/match_widget.dart';
 
@@ -24,17 +25,91 @@ class _UserProfileSectionState extends State<UserProfileSection> {
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-        child: Row(
-          children: [
-            CircleAvatar(
-              child: Icon(Icons.person),
+    return ListView(
+      children: [
+        Container(
+          height: 150.0,
+          child: Card(
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    const CircleAvatar(
+                      radius: 40.0,
+                      child: Icon(Icons.person),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(8.0),
+                      child: FittedText("user name", 150.0)
+                      ),
+                  ],
+                ),
+              ),
+            
+            
+          ),
+      ),
+      Container(
+        height: 150.0,
+        child: Card(
+          child: Container(
+            padding: EdgeInsets.all(8.0),
+            alignment: Alignment.centerLeft,
+
+            child: const ListTile(
+              title: Text("sample info"),
+              subtitle: Text("sample info"),
+              //trailing: FittedText("user name", 150.0),
             ),
-            Text("user name"),
-          ],
+            )
+          )
+        ),
+        Container(
+        height: 150.0,
+        child: Card(
+          child: Container(
+            padding: EdgeInsets.all(8.0),
+            alignment: Alignment.centerLeft,
+
+            child: const ListTile(
+              title: Text("sample info"),
+              subtitle: Text("sample info"),
+              //trailing: FittedText("user name", 150.0),
+            ),
+            )
+          )
+        ),
+        Container(
+        height: 150.0,
+        child: Card(
+          child: Container(
+            padding: EdgeInsets.all(8.0),
+            alignment: Alignment.centerLeft,
+
+            child: const ListTile(
+              title: Text("sample info"),
+              subtitle: Text("sample info"),
+              //trailing: FittedText("user name", 150.0),
+            ),
+            )
+          )
         ),
       
-      
+      ],
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

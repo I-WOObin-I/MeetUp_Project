@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:meetup_app/src/features/leagues_feature/league_details_view.dart';
 
 import 'features/clubs_feature/club_details_view.dart';
+import 'features/lfg_feature/lfg_board.dart';
 import 'features/user_feature/user_details_view.dart';
 import 'sample_feature/sample_item_list_view.dart';
 import 'settings/settings_controller.dart';
@@ -29,6 +30,7 @@ class _MyAppState extends State<MyApp> {
       ClubDetailsView(),
       LeagueDetailsView(),
       UserDetailsView(),
+      LFGBoard(),
       SettingsView(controller: widget.settingsController),
     ];
   }
@@ -81,6 +83,10 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Settings',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.group_add),
+              label: 'LFG',
             ),
           ],
           currentIndex: _selectedIndex,

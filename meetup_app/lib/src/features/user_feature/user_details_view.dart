@@ -7,6 +7,7 @@ import 'package:meetup_app/src/features/clubs_feature/club_sections/club_info_se
 import 'package:meetup_app/src/features/clubs_feature/club_sections/club_members_section.dart';
 import 'package:meetup_app/src/features/leagues_feature/league_sections/league_table_section.dart';
 import 'package:meetup_app/src/features/leagues_feature/league_sections/league_upcoming_matches_section.dart';
+import 'package:meetup_app/src/features/user_feature/user_sections/user_calendar_section.dart';
 import 'package:meetup_app/src/features/user_feature/user_sections/user_profile_section.dart';
 
 import '../../../core/widgets/banner_tabbar.dart';
@@ -24,9 +25,9 @@ class _UserDetailsViewState extends State<UserDetailsView> {
   int _selectedTabIndex = 0;
 
   List<Icon> tabBarIcons = [
-    const Icon(Icons.person),
-    const Icon(Icons.leaderboard),
     const Icon(Icons.calendar_month),
+    const Icon(Icons.person),
+    const Icon(Icons.hourglass_empty),
     const Icon(Icons.info),
   ];
 
@@ -52,7 +53,7 @@ class _UserDetailsViewState extends State<UserDetailsView> {
                       NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                   sliver: SliverAppBar(
                     title: const ClubTitle(
-                        clubName: "League Name",
+                        clubName: "User Name",
                         clubLogoPath: "assets/images/samples/team_logo.png"),
                     floating: true,
                     pinned: true,
@@ -96,8 +97,8 @@ class _UserDetailsViewState extends State<UserDetailsView> {
                   // These are the contents of the tab views, below the tabs.
 
                   children: [
+                    UserCalendarSection(),
                     UserProfileSection(),
-                    LeagueTableSection(),
                     Text("data"),
                     Text("data"),
                   ]),
