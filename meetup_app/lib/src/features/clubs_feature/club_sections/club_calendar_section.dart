@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../core/objects/event.dart';
+import '../../../../core/objects/event.dart';
 
 class ClubCalendarSection extends StatefulWidget {
   const ClubCalendarSection({Key? key}) : super(key: key);

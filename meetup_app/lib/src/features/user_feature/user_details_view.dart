@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:meetup_app/src/clubs_feature/club_components/club_banner.dart';
-import 'package:meetup_app/src/clubs_feature/club_components/club_drawer.dart';
-import 'package:meetup_app/src/clubs_feature/club_components/club_title.dart';
-import 'package:meetup_app/src/clubs_feature/club_sections/club_board_section.dart';
-import 'package:meetup_app/src/clubs_feature/club_sections/club_info_section.dart';
-import 'package:meetup_app/src/clubs_feature/club_sections/club_members_section.dart';
-import 'package:meetup_app/src/leagues_feature/league_sections/league_table_section.dart';
-import 'package:meetup_app/src/leagues_feature/league_sections/league_upcoming_matches_section.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_components/club_banner.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_components/club_drawer.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_components/club_title.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_sections/club_board_section.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_sections/club_info_section.dart';
+import 'package:meetup_app/src/features/clubs_feature/club_sections/club_members_section.dart';
+import 'package:meetup_app/src/features/leagues_feature/league_sections/league_table_section.dart';
+import 'package:meetup_app/src/features/leagues_feature/league_sections/league_upcoming_matches_section.dart';
+import 'package:meetup_app/src/features/user_feature/user_sections/user_profile_section.dart';
 
-import '../../core/widgets/banner_tabbar.dart';
+import '../../../core/widgets/banner_tabbar.dart';
 
-class LeagueDetailsView extends StatefulWidget {
-  LeagueDetailsView({super.key});
+class UserDetailsView extends StatefulWidget {
+  UserDetailsView({super.key});
 
-  static const routeName = '/club_details';
+  static const routeName = '/user_details';
 
   @override
-  _LeagueDetailsViewState createState() => _LeagueDetailsViewState();
+  _UserDetailsViewState createState() => _UserDetailsViewState();
 }
 
-class _LeagueDetailsViewState extends State<LeagueDetailsView> {
+class _UserDetailsViewState extends State<UserDetailsView> {
   int _selectedTabIndex = 0;
 
   List<Icon> tabBarIcons = [
-    const Icon(Icons.sports),
+    const Icon(Icons.person),
     const Icon(Icons.leaderboard),
     const Icon(Icons.calendar_month),
     const Icon(Icons.info),
@@ -68,10 +69,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
                           //Navigator.restorablePushNamed(context, SettingsView.routeName);
                         },
                       ),
-                    ],
-                    flexibleSpace: const ClubBanner(
-                        bannerImagePath:
-                            'assets/images/samples/league_banner.png'),
+                    ],                  
                     expandedHeight: 150.0,
                     //forceElevated: innerBoxIsScrolled,
                     bottom: BannerTabBar(
@@ -98,7 +96,7 @@ class _LeagueDetailsViewState extends State<LeagueDetailsView> {
                   // These are the contents of the tab views, below the tabs.
 
                   children: [
-                    LeagueUpCommingMatchesSection(),
+                    UserProfileSection(),
                     LeagueTableSection(),
                     Text("data"),
                     Text("data"),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/core/widgets/board_post_widget.dart';
 
-import '../../../core/objects/board_post.dart';
+import '../../../../core/objects/board_post.dart';
 
 class ClubBoardSection extends StatefulWidget {
   const ClubBoardSection({Key? key}) : super(key: key);
