@@ -17,7 +17,7 @@ dependencies:
 
   # date format
   intl: ^0.18.0
-
+  
   # calendar widget
   table_calendar: ^3.0.0
 
