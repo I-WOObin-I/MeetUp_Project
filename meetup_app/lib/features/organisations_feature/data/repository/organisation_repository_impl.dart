@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:meetup_app/core/constants/constants.dart';
 import 'package:meetup_app/core/resources/data_state.dart';
-import 'package:meetup_app/features/clubs_feature/data/data_sources/remote/clubs_api_service.dart';
-import 'package:meetup_app/features/clubs_feature/data/models/club.dart';
-import 'package:meetup_app/features/clubs_feature/domain/repository/club_repository.dart';
+import 'package:meetup_app/features/organisations_feature/data/data_sources/remote/organisations_api_service.dart';
+import 'package:meetup_app/features/organisations_feature/data/models/organisation.dart';
+import 'package:meetup_app/features/organisations_feature/domain/repository/organisation_repository.dart';
 
-class ClubRepositoryImpl implements ClubRepository {
-  final ClubsApiService _clubsApiService;
-  ClubRepositoryImpl(this._clubsApiService);
+class OrganisationRepositoryImpl implements OrganisationRepository {
+  final OrganisationsApiService _organisationsApiService;
+  OrganisationRepositoryImpl(this._organisationsApiService);
 
   @override
-  Future<DataState<List<ClubModel>>> getClubs() async {
+  Future<DataState<List<OrganisationModel>>> getOrganisations() async {
     try {
-      final httpResponse = await _clubsApiService.getClubs(
-        apiKey: clubsAPIKey,
+      final httpResponse = await _organisationsApiService.getOrganisations(
+        apiKey: organisationsAPIKey,
         sportType: "sample sport",
         country: "sample country",
         city: "sample city",

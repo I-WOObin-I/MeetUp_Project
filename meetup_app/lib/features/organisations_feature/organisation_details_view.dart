@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:meetup_app/core/widgets/banner_tabbar.dart';
+import 'package:meetup_app/features/clubs_feature/club_components/club_banner.dart';
 import 'package:meetup_app/features/clubs_feature/club_components/club_drawer.dart';
 import 'package:meetup_app/features/clubs_feature/club_components/club_title.dart';
-import 'package:meetup_app/features/user_feature/user_sections/user_calendar_section.dart';
-import 'package:meetup_app/features/user_feature/user_sections/user_profile_section.dart';
+import 'package:meetup_app/features/organisations_feature/organisation_sections/organisation_table_section.dart';
+import 'package:meetup_app/features/organisations_feature/organisation_sections/organisation_upcoming_matches_section.dart';
 
-import '../../../core/widgets/banner_tabbar.dart';
+class OrganisationDetailsView extends StatefulWidget {
+  OrganisationDetailsView({super.key});
 
-class UserDetailsView extends StatefulWidget {
-  UserDetailsView({super.key});
-
-  static const routeName = '/user_details';
+  static const routeName = '/organisation_details';
 
   @override
-  _UserDetailsViewState createState() => _UserDetailsViewState();
+  _OrganisationDetailsViewState createState() => _OrganisationDetailsViewState();
 }
 
-class _UserDetailsViewState extends State<UserDetailsView> {
+class _OrganisationDetailsViewState extends State<OrganisationDetailsView> {
   int _selectedTabIndex = 0;
 
   List<Icon> tabBarIcons = [
+    const Icon(Icons.sports),
+    const Icon(Icons.leaderboard),
     const Icon(Icons.calendar_month),
-    const Icon(Icons.person),
-    const Icon(Icons.hourglass_empty),
     const Icon(Icons.info),
   ];
 
@@ -47,7 +47,7 @@ class _UserDetailsViewState extends State<UserDetailsView> {
                       NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                   sliver: SliverAppBar(
                     title: const ClubTitle(
-                        clubName: "User Name",
+                        clubName: "Organisation Name",
                         clubLogoPath: "assets/images/samples/team_logo.png"),
                     floating: true,
                     pinned: true,
@@ -64,7 +64,10 @@ class _UserDetailsViewState extends State<UserDetailsView> {
                           //Navigator.restorablePushNamed(context, SettingsView.routeName);
                         },
                       ),
-                    ],                  
+                    ],
+                    flexibleSpace: const ClubBanner(
+                        bannerImagePath:
+                            'assets/images/samples/organisation_banner.png'),
                     expandedHeight: 150.0,
                     //forceElevated: innerBoxIsScrolled,
                     bottom: BannerTabBar(
@@ -91,8 +94,8 @@ class _UserDetailsViewState extends State<UserDetailsView> {
                   // These are the contents of the tab views, below the tabs.
 
                   children: [
-                    UserCalendarSection(),
-                    UserProfileSection(),
+                    OrganisationUpCommingMatchesSection(),
+                    OrganisationTableSection(),
                     Text("data"),
                     Text("data"),
                   ]),

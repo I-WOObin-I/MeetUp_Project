@@ -1,7 +1,6 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:meetup_app/core/objects/board_post.dart';
 import 'package:meetup_app/core/widgets/fitted_text.dart';
 
 class MatchWidget extends StatefulWidget {

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:meetup_app/core/objects/skill_lvl.dart';
 import 'package:meetup_app/core/objects/sports.dart';
 

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meetup_app/core/widgets/board_post_widget.dart';
 import 'package:meetup_app/core/widgets/fitted_text.dart';
-import 'package:meetup_app/core/widgets/fixtures/league_table_widget.dart';
-import 'package:meetup_app/core/widgets/match_widget.dart';
 
 class UserProfileSection extends StatefulWidget {
   const UserProfileSection({Key? key}) : super(key: key);

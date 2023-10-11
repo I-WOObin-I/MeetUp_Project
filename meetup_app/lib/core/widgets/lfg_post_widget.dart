@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:meetup_app/core/objects/board_post.dart';
 import 'package:meetup_app/core/objects/lfg_post.dart';
 
 class LFGPostWidget extends StatelessWidget {

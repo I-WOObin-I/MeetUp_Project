@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/core/objects/sports.dart';
-import 'package:meetup_app/core/widgets/board_post_widget.dart';
 import 'package:meetup_app/core/widgets/lfg_post_widget.dart';
-import 'package:meetup_app/src/features/lfg_feature/lfg_filter_bar.dart';
+import 'package:meetup_app/features/lfg_feature/lfg_filter_bar.dart';
 
-import '../../../../core/objects/board_post.dart';
 import '../../../core/objects/lfg_post.dart';
 import '../../../core/objects/skill_lvl.dart';
 

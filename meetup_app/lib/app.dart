@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:meetup_app/features/leagues_feature/league_details_view.dart';
+import 'package:meetup_app/features/organisations_feature/organisation_details_view.dart';
 
 import 'features/clubs_feature/club_details_view.dart';
 import 'features/lfg_feature/lfg_board.dart';
 import 'features/user_feature/user_details_view.dart';
-import 'src/sample_feature/sample_item_list_view.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_view.dart';
 
@@ -28,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _widgetOptions = [
       ClubDetailsView(),
-      LeagueDetailsView(),
+      OrganisationDetailsView(),
       UserDetailsView(),
       LFGBoard(),
       SettingsView(controller: widget.settingsController),

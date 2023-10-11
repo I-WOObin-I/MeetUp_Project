@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:meetup_app/core/objects/fixture.dart';
 
 import '../game_match.dart';

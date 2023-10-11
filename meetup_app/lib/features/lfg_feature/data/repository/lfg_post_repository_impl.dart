@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:meetup_app/core/constants/constants.dart';
 import 'package:meetup_app/core/resources/data_state.dart';
-import 'package:meetup_app/features/clubs_feature/data/data_sources/remote/clubs_api_service.dart';
-import 'package:meetup_app/features/clubs_feature/data/models/club.dart';
-import 'package:meetup_app/features/clubs_feature/domain/repository/club_repository.dart';
+import 'package:meetup_app/features/lfg_feature/data/data_sources/remote/lfg_posts_api_service.dart';
+import 'package:meetup_app/features/lfg_feature/data/models/lfg_post.dart';
+import 'package:meetup_app/features/lfg_feature/domain/repository/lfg_post_repository.dart';
 
-class ClubRepositoryImpl implements ClubRepository {
-  final ClubsApiService _clubsApiService;
-  ClubRepositoryImpl(this._clubsApiService);
+class LFGPostRepositoryImpl implements LFGPostRepository {
+  final LFGPostsApiService _lfgPostsApiService;
+  LFGPostRepositoryImpl(this._lfgPostsApiService);
 
   @override
-  Future<DataState<List<ClubModel>>> getClubs() async {
+  Future<DataState<List<LFGPostModel>>> getLFGPosts() async {
     try {
-      final httpResponse = await _clubsApiService.getClubs(
-        apiKey: clubsAPIKey,
+      final httpResponse = await _lfgPostsApiService.getLFGPosts(
+        apiKey: lfgPostsAPIKey,
         sportType: "sample sport",
         country: "sample country",
         city: "sample city",
