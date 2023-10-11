@@ -4,10 +4,10 @@ import 'package:meetup_app/features/clubs_feature/domain/usecases/get_club.dart'
 import 'package:meetup_app/features/clubs_feature/presentation/bloc/club/remote/remote_club_event.dart';
 import 'package:meetup_app/features/clubs_feature/presentation/bloc/club/remote/remote_club_state.dart';
 
-class RemoteClubBloc extends Bloc<RemoteClubsEvent, RemoteClubsState> {
+class RemoteClubsBloc extends Bloc<RemoteClubsEvent, RemoteClubsState> {
   final GetClubUseCase _getClubUseCase;
 
-  RemoteClubBloc(this._getClubUseCase) : super(RemoteClubsLoading()) {
+  RemoteClubsBloc(this._getClubUseCase) : super(RemoteClubsLoading()) {
     on<GetClubs>(onGetClubs);
   }
 

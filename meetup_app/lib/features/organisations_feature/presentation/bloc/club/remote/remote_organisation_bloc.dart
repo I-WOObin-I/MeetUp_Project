@@ -4,14 +4,17 @@ import 'package:meetup_app/features/organisations_feature/domain/usecases/get_or
 import 'package:meetup_app/features/organisations_feature/presentation/bloc/club/remote/remote_organisation_event.dart';
 import 'package:meetup_app/features/organisations_feature/presentation/bloc/club/remote/remote_organisation_state.dart';
 
-class RemoteOrganisationBloc extends Bloc<RemoteOrganisationsEvent, RemoteOrganisationsState> {
+class RemoteOrganisationsBloc
+    extends Bloc<RemoteOrganisationsEvent, RemoteOrganisationsState> {
   final GetOrganisationUseCase _getOrganisationUseCase;
 
-  RemoteOrganisationBloc(this._getOrganisationUseCase) : super(RemoteOrganisationsLoading()) {
+  RemoteOrganisationsBloc(this._getOrganisationUseCase)
+      : super(RemoteOrganisationsLoading()) {
     on<GetOrganisations>(onGetOrganisations);
   }
 
-  void onGetOrganisations(GetOrganisations event, Emitter<RemoteOrganisationsState> emit) async {
+  void onGetOrganisations(
+      GetOrganisations event, Emitter<RemoteOrganisationsState> emit) async {
     final dataState = await _getOrganisationUseCase.call(null);
 
     if (dataState is DataSuccess && dataState.data!.isNotEmpty) {

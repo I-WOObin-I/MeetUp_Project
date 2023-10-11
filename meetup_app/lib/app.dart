@@ -62,35 +62,47 @@ class _MyAppState extends State<MyApp> {
         // appBar: AppBar(
         //   title: Text('My App'),
         // ),
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: _selectedIndex,
+          height: 60.0,
+          onDestinationSelected: (int index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          // headers
+          destinations: const <Widget>[
+            NavigationDestination(
+              icon: Icon(Icons.star),
+              label: 'Club',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.emoji_events),
               label: 'League',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.person),
-              label: 'List',
+              label: 'Personal',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.group_add),
               label: 'LFG',
             ),
-            BottomNavigationBarItem(
+            NavigationDestination(
               icon: Icon(Icons.settings),
               label: 'settings',
             ),
           ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
         ),
+
+        // bodies
+        body: <Widget>[
+          ClubDetailsView(),
+          OrganisationDetailsView(),
+          UserDetailsView(),
+          const LFGBoard(),
+          SettingsView(controller: widget.settingsController),
+        ][_selectedIndex],
       ),
     );
   }

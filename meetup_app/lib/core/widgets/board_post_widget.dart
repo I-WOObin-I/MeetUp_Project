@@ -18,14 +18,14 @@ class BoardPostWidget extends StatelessWidget {
           "${boardPost.author}  |  ${dateFormat.format(boardPost.publishDate)}",
           style: const TextStyle(
             fontSize: 12.0,
-            color: Colors.grey,
+            //color: Colors.grey,
           ),
         ),
         subtitle: Text(
           boardPost.content,
           style: const TextStyle(
             fontSize: 16.0,
-            color: Colors.white,
+            //color: Colors.white,
           ),
         ),
         trailing: Column(
