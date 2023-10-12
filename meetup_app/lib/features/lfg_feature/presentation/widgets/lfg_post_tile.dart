@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meetup_app/core/objects/lfg_post.dart';
+import 'package:meetup_app/features/lfg_feature/domain/entities/lfg_post.dart';
 
-class LFGPostWidget extends StatelessWidget {
-  LFGPost lfgPost;
+class LFGPostTile extends StatelessWidget {
+  LFGPostEntity? lfgPostEntity;
   DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm");
-  LFGPostWidget({super.key, required this.lfgPost});
+  LFGPostTile({super.key, this.lfgPostEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +19,14 @@ class LFGPostWidget extends StatelessWidget {
               child: Icon(Icons.person),
             ),
             title: Text(
-              "${lfgPost.author}  |  ${dateFormat.format(lfgPost.publishDate)}",
+              "${lfgPostEntity!.author?? ''}  |  ${dateFormat.format(lfgPostEntity!.publishDate!)}",
               style: const TextStyle(
                 fontSize: 12.0,
                 //color: Colors.grey,
               ),
             ),
             subtitle: Text(
-              lfgPost.content,
+              lfgPostEntity!.content?? '',
               style: const TextStyle(
                 fontSize: 16.0,
                 //color: Colors.white,
@@ -39,7 +40,7 @@ class LFGPostWidget extends StatelessWidget {
                   children: [
                     const Icon(Icons.group, size: 25.0),
                     const SizedBox(width: 4.0),
-                    Text("${lfgPost.attendeeIds.length.toString()} / ${lfgPost.maxPlayers.toString()}")
+                    Text("${lfgPostEntity!.attendeeIds!.length.toString()} / ${lfgPostEntity!.maxPlayers!.toString()}")
                 ]),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -47,7 +48,7 @@ class LFGPostWidget extends StatelessWidget {
                     const Icon(Icons.thumb_up, size: 15.0),
                     const SizedBox(width: 4.0),
                     Text(
-                      lfgPost.likes.length.toString(),
+                      lfgPostEntity!.likes!.length.toString(),
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
@@ -58,7 +59,7 @@ class LFGPostWidget extends StatelessWidget {
                     const Icon(Icons.comment, size: 15.0),
                     const SizedBox(width: 4.0),
                     Text(
-                      lfgPost.comments.length.toString(),
+                      lfgPostEntity!.comments!.length.toString(),
                       style: TextStyle(fontSize: 12),
                     ),
                   ],

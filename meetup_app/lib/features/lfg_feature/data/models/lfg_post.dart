@@ -5,6 +5,7 @@ import 'package:meetup_app/features/lfg_feature/domain/entities/lfg_post.dart';
 class LFGPostModel extends LFGPostEntity {
   const LFGPostModel({
     String? id,
+    String? author,
     SportType? sportType,
     String? location,
     DateTime? publishDate,
@@ -15,11 +16,14 @@ class LFGPostModel extends LFGPostEntity {
     String? content,
     List<String>? attendeeIds,
     List<SkillLevel>? skillLevels,
+    List<String>? likes,
+    List<String>? comments,
   });
 
   factory LFGPostModel.fromJson(Map<String, dynamic> map) {
     return LFGPostModel(
       id: map['id'],
+      author: map['author'],
       sportType: map['sportType'],
       location: map['location'],
       publishDate: map['publishDate'],
@@ -30,6 +34,8 @@ class LFGPostModel extends LFGPostEntity {
       content: map['content'],
       attendeeIds: map['attendeeIds'],
       skillLevels: map['skillLevels'],
+      likes: map['likes'],
+      comments: map['comments'],
     );
   }
 }

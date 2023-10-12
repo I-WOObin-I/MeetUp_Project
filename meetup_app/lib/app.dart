@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:meetup_app/features/organisations_feature/organisation_details_view.dart';
 
 import 'features/clubs_feature/club_details_view.dart';
-import 'features/lfg_feature/lfg_board.dart';
+import 'features/lfg_feature/presentation/pages/lfg_board.dart';
 import 'features/user_feature/user_details_view.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_view.dart';

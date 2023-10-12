@@ -4,6 +4,7 @@ import 'package:meetup_app/core/objects/sports.dart';
 
 class LFGPostEntity extends Equatable {
   final String? id;
+  final String? author;
   final SportType? sportType;
   final String? location;
   final DateTime? publishDate;
@@ -12,13 +13,15 @@ class LFGPostEntity extends Equatable {
   final int? maxPlayers;
   final String? title;
   final String? content;
-
   final List<String>? attendeeIds;
   final List<SkillLevel>? skillLevels;
+  final List<String>? likes;
+  final List<String>? comments;
 
 
   const LFGPostEntity({
     this.id,
+    this.author,
     this.sportType,
     this.location,
     this.publishDate,
@@ -29,11 +32,14 @@ class LFGPostEntity extends Equatable {
     this.content,
     this.attendeeIds,
     this.skillLevels,
+    this.likes,
+    this.comments,
   });
 
   @override
   List<Object?> get props => [
     id,
+    author,
     sportType,
     location,
     publishDate,

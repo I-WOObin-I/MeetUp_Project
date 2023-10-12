@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:meetup_app/core/objects/sports.dart';
-import 'package:meetup_app/core/widgets/lfg_post_widget.dart';
+import 'package:meetup_app/features/lfg_feature/data/models/lfg_post.dart';
+import 'package:meetup_app/features/lfg_feature/domain/entities/lfg_post.dart';
+import 'package:meetup_app/features/lfg_feature/presentation/widgets/lfg_post_tile.dart';
 import 'package:meetup_app/features/lfg_feature/lfg_filter_bar.dart';
 
-import '../../../core/objects/lfg_post.dart';
-import '../../../core/objects/skill_lvl.dart';
+import '../../../../../core/objects/lfg_post.dart';
+import '../../../../../core/objects/skill_lvl.dart';
 
 class LFGBoard extends StatefulWidget {
   const LFGBoard({Key? key}) : super(key: key);
@@ -55,19 +57,24 @@ class __LFGBoardState extends State<LFGBoard> {
       body: ListView.builder(
         itemCount: boardActivity.length,
         itemBuilder: (BuildContext context, int index) {
-          return LFGPostWidget(
-              lfgPost: LFGPost(
-                title: "sample title",
-                author: 'Author $index',
-                location: "sample location",
-                publishDate: DateTime.now(),
-                content: boardActivity[index],
-                eventDate: DateTime.now(),
+          return LFGPostTile(
+              lfgPostEntity: LFGPostEntity(
+                id: "1",
+                author: "some guy",
                 sportType: SportType.volleyball,
+                location: "Gdansk, Ergo Arena",
+                publishDate: DateTime.now(),
+                startDate: DateTime.now(),
+                endDate: DateTime.now(),
                 maxPlayers: 14,
-                skillLevels: [SkillLevel.beginner, SkillLevel.intermediate]
-                
-          ));
+                title: "gra na pozycjach",
+                content: "mam 3 wolne miejsca na ergo arene 12.00",
+                attendeeIds: const ["123", "234", "345"],
+                skillLevels: const [SkillLevel.amateur, SkillLevel.expert],
+                likes: const ['123', '232', '2333'],
+                comments: const ['234','32432','34344'],
+              ),
+          );
         },
       ),
       

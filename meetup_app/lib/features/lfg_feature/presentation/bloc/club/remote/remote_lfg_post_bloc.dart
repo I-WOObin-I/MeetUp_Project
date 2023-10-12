@@ -4,10 +4,10 @@ import 'package:meetup_app/features/lfg_feature/domain/usecases/get_lfg_post.dar
 import 'package:meetup_app/features/lfg_feature/presentation/bloc/club/remote/remote_lfg_post_event.dart';
 import 'package:meetup_app/features/lfg_feature/presentation/bloc/club/remote/remote_lfg_post_state.dart';
 
-class RemoteLFGPostBloc extends Bloc<RemoteLFGPostsEvent, RemoteLFGPostsState> {
+class RemoteLFGPostsBloc extends Bloc<RemoteLFGPostsEvent, RemoteLFGPostsState> {
   final GetLFGPostUseCase _getLFGPostUseCase;
 
-  RemoteLFGPostBloc(this._getLFGPostUseCase) : super(RemoteLFGPostsLoading()) {
+  RemoteLFGPostsBloc(this._getLFGPostUseCase) : super(RemoteLFGPostsLoading()) {
     on<GetLFGPosts>(onGetLFGPosts);
   }
 
