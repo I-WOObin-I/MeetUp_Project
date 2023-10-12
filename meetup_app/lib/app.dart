@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:meetup_app/features/lfg_feature/presentation/bloc/club/remote/remote_lfg_post_bloc.dart';
+import 'package:meetup_app/features/lfg_feature/presentation/bloc/club/remote/remote_lfg_post_event.dart';
 import 'package:meetup_app/features/organisations_feature/organisation_details_view.dart';
+import 'package:meetup_app/injection_container.dart';
 
 import 'features/clubs_feature/club_details_view.dart';
 import 'features/lfg_feature/presentation/pages/lfg_board.dart';
@@ -42,7 +46,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return BlocProvider<RemoteLFGPostsBloc>(
+      create: (context) => sl()..add(const GetLFGPosts()),
+      child: MaterialApp(
       restorationScopeId: 'app',
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -104,6 +110,7 @@ class _MyAppState extends State<MyApp> {
           SettingsView(controller: widget.settingsController),
         ][_selectedIndex],
       ),
+    )
     );
   }
 }

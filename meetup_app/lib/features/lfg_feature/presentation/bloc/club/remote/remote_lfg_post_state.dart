@@ -12,7 +12,7 @@ abstract class RemoteLFGPostsState extends Equatable {
   });
 
   @override
-  List<Object?> get props => [lfgPosts, exception];
+  List<Object?> get props => [lfgPosts!, exception!];
 }
 
 class RemoteLFGPostsLoading extends RemoteLFGPostsState {
