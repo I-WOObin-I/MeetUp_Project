@@ -43,11 +43,10 @@ class LFGBoard extends StatelessWidget {
       //     );
       //   },
       // ),
-      
     );
   }
 
-_buildAppBar(BuildContext context) {
+  _buildAppBar(BuildContext context) {
     return AppBar(
       title: Text("LFG Board"),
       actions: [
@@ -75,33 +74,18 @@ _buildAppBar(BuildContext context) {
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is RemoteLFGPostsLoaded) {
-        return Column(
-          children: [
-            SizedBox(
-              height: 50.0,
-              child: Text(
-                state.lfgPosts.toString(),
-              ),
-            ),
-            SizedBox(
-              height: 800.0,
-              child: ListView.builder(
-                      itemBuilder: (context,index){
-                      return LFGPostTile(
-              lfgPostEntity: state.lfgPosts![index],
-              //onArticlePressed: (article) => _onArticlePressed(context,article),
-                      );
-                      },
-                      itemCount: state.lfgPosts!.length,
-                    ),
-            ),
-          ],
-        );
-        
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              return LFGPostTile(
+                lfgPostEntity: state.lfgPosts![index],
+                //onArticlePressed: (article) => _onArticlePressed(context,article),
+              );
+            },
+            itemCount: state.lfgPosts!.length,
+          );
         }
-      return const SizedBox();
+        return const SizedBox();
       },
     );
   }
-
 }

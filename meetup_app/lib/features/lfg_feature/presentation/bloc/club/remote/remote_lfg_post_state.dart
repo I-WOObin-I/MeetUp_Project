@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meetup_app/features/lfg_feature/domain/entities/lfg_post.dart';
-import 'dart:developer' as developer;
 
 abstract class RemoteLFGPostsState extends Equatable {
   final List<LFGPostEntity>? lfgPosts;
@@ -23,16 +22,10 @@ class RemoteLFGPostsLoading extends RemoteLFGPostsState {
 }
 
 class RemoteLFGPostsLoaded extends RemoteLFGPostsState {
-  
-  RemoteLFGPostsLoaded(List<LFGPostEntity> lfgPost) : super(lfgPosts: lfgPost)
-  {
-  developer.log(lfgPost.toString(), name: 'lfgPost');
-    
-  }
-
-  
+  RemoteLFGPostsLoaded(List<LFGPostEntity> lfgPost) : super(lfgPosts: lfgPost);
 }
 
 class RemoteLFGPostsError extends RemoteLFGPostsState {
-  const RemoteLFGPostsError(DioException exception) : super(exception: exception);
+  const RemoteLFGPostsError(DioException exception)
+      : super(exception: exception);
 }

@@ -29,7 +29,7 @@ class LFGPostRepositoryImpl implements LFGPostRepository {
           attendeeIds: const ["123", "234", "345"],
           skillLevels: const [SkillLevel.amateur, SkillLevel.expert],
           likes: const ['123', '232', '2333'],
-          comments: const ['234','32432','34344'],
+          comments: const ['234', '32432', '34344'],
         ),
         LFGPostModel(
           id: "2",
@@ -44,10 +44,10 @@ class LFGPostRepositoryImpl implements LFGPostRepository {
           attendeeIds: const ["123", "234", "345"],
           skillLevels: const [SkillLevel.intermediate, SkillLevel.amateur],
           likes: const ['123', '232', '2333'],
-          comments: const ['234','32432','34344'],
+          comments: const ['234', '32432', '34344'],
         ),
         LFGPostModel(
-          id: "1",
+          id: "3",
           sportType: SportType.volleyball,
           location: "Gdansk, Wilkopolska 2",
           publishDate: DateTime.now(),
@@ -59,7 +59,7 @@ class LFGPostRepositoryImpl implements LFGPostRepository {
           attendeeIds: const ["123", "234", "345"],
           skillLevels: const [SkillLevel.beginner, SkillLevel.intermediate],
           likes: const ['123', '232', '2333'],
-          comments: const ['234','32432','34344'],
+          comments: const ['234', '32432', '34344'],
         ),
       ];
       developer.log(data.toString(), name: 'repo impl');
